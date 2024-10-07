@@ -1,0 +1,50 @@
+$color1: #13131f;
+$color2: #0e4361;
+$color3: #0983b1;
+$color4: #07caff;
+$color5: #0ffff8;
+$color6: #9ff6f3;
+
+nav {
+    padding: 0 !important;
+  .container-fluid {
+    background-color: $color3;
+    #navbarNav {
+      justify-content: space-between;
+      align-items: center;
+      ul {
+        display: flex;
+        list-style-type: none;
+        li {
+          text-decoration: none;
+          margin: 1rem;
+          transition: 0.5s ease;
+          border-radius: 1rem;
+          padding: 0.7rem;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+  .navbar-brand {
+    font-size: 1.7rem;
+  }
+  .cart {
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+    .cartIcon {
+      font-size: 30px;
+    }
+    .cartAmount {
+      font-size: 1.5rem;
+      margin: 0.5rem;
+    }
+  }
+}
+
+li:hover {
+  background-color: $color2;
+}
+
+
