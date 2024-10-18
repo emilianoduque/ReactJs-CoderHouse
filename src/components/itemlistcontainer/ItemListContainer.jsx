@@ -1,11 +1,17 @@
+import ItemList from "./ItemList"
+import hocFilterProductos from "../hoc/HocFilterProducts"
+import ItemDetailContainer from "../itemDetail/ItemDetailContainer"
 import "./itemlist.scss"
 
-const ItemListContainer = ({ saludo}) => {
+const ItemListContainer = ( {productos }) => {
   return (
-    <>
-    <h1>{saludo}</h1>
-    </>
+    <div className="itemListContainer">
+      <ItemList productos={productos}></ItemList>
+
+      <ItemDetailContainer></ItemDetailContainer>
+    </div>
   )
 }
 
-export default ItemListContainer
+const ItemListContainerWithHoc = hocFilterProductos(ItemListContainer)
+export default ItemListContainerWithHoc
