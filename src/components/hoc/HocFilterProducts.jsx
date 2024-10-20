@@ -1,5 +1,6 @@
 import  useProductos from "../../customHooks/useProducts"
 import { Component, useState } from "react"
+import "./hocFilter.scss"
 
 const hocFilterProductos = (Component) => {
 
@@ -29,10 +30,12 @@ const hocFilterProductos = (Component) => {
 
     return ( 
         <>
-            <div>
+            <div className="searchDiv">
                 <input type="text" placeholder="buscar..." onChange={capturarInput}/>
-                <button onClick={() => setTypeOrder("menor")}>Menor</button>
-                <button onClick={() => setTypeOrder("mayor")}>Mayor</button>
+                <div className="buttons">
+                    <button onClick={() => setTypeOrder("menor")}>Menor</button>
+                    <button onClick={() => setTypeOrder("mayor")}>Mayor</button>
+                </div>
             </div>
             <Component productos ={buscar()}/>
         </>

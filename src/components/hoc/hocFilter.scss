@@ -1,0 +1,44 @@
+$breakpoints: (
+    "sm": 485px
+);
+
+@mixin sm {
+    @media (max-width: map-get($breakpoints, "sm")){
+        @content;
+    }
+}
+
+.searchDiv {
+    display: flex;
+    justify-content: center;
+    input {
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.212);
+        padding: .7rem;
+        margin: 10px;
+        @include sm{
+            width: 80%;
+            margin: 1.2rem auto;
+        }
+    }
+    .buttons{
+        button {
+            border: none;
+            width: 70px;
+            height: 60px;
+            margin: .5rem;
+            border-radius: 8px;
+            transition: .3s ease;
+            &:hover {
+                background-color: #0983b1;
+            }
+        }
+        @include sm{
+            margin: auto;
+        }
+    }
+
+   @include sm{
+            flex-direction: column;
+        }
+}

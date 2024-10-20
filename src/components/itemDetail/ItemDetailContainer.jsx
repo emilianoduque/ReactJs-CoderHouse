@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
   },[idProducto])
 
   if(!producto) {
-    return <p>Loading...</p> //sin esto me tiraba error (debo resolverlo)
+    return <p></p> //sin esto me tiraba error (debo resolverlo)
   }
 
   return (

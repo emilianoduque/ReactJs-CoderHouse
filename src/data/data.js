@@ -3,7 +3,7 @@ const productos = [
         id: 1,
         nombre: "Bombilla LED WiFi",
         precio: 1500,
-        img: "/imagenes/bombilla_led.png",
+        img: "../../public/img/bombilla-led.jpg",
         descripcion: "Controla la iluminación de tu hogar desde tu smartphone. Compatible con Alexa y Google Home.",
         categoria: "iluminacion"
     },
@@ -11,7 +11,7 @@ const productos = [
         id: 2,
         nombre: "Tira LED RGB",
         precio: 2500,
-        img: "/imagenes/tira_led.png",
+        img: "../../public/img/tira-led.jpg",
         descripcion: "Cambia los colores y ajusta el brillo de tus luces con comandos de voz.",
         categoria: "iluminacion"
     },
@@ -19,7 +19,7 @@ const productos = [
         id: 3,
         nombre: "Lámpara de Mesa con Control Remoto",
         precio: 3200,
-        img: "/imagenes/lampara_inteligente.png",
+        img: "../../public/img/lampara-mesa.jpg",
         descripcion: "Iluminación ajustable y temporizador, controlados desde tu dispositivo móvil.",
         categoria: "iluminacion"
     },
@@ -29,7 +29,7 @@ const productos = [
         id: 4,
         nombre: "Cámara de Seguridad WiFi",
         precio: 4500,
-        img: "/imagenes/camara_seguridad.png",
+        img: "../../public/img/camara.jpg",
         descripcion: "Supervisión 24/7 con visión nocturna y alertas en tiempo real a tu teléfono.",
         categoria: "seguridad"
     },
@@ -37,7 +37,7 @@ const productos = [
         id: 5,
         nombre: "Sensor de Puertas y Ventanas",
         precio: 1800,
-        img: "/imagenes/sensor_puertas.png",
+        img: "../../public/img/sensor-puertas.jpg",
         descripcion: "Recibe alertas cuando una puerta o ventana se abre inesperadamente.",
         categoria: "seguridad"
     },
@@ -45,7 +45,7 @@ const productos = [
         id: 6,
         nombre: "Timbre con Video",
         precio: 5200,
-        img: "/imagenes/timbre_video.png",
+        img: "../../public/img/timbre-video.jpg",
         descripcion: "Monitorea quién está en la puerta y habla con los visitantes desde cualquier lugar.",
         categoria: "seguridad"
     },
@@ -55,7 +55,7 @@ const productos = [
         id: 7,
         nombre: "Termostato WiFi",
         precio: 7500,
-        img: "/imagenes/termostato_inteligente.png",
+        img: "../../public/img/termostato.jpg",
         descripcion: "Ajusta la temperatura de tu hogar desde cualquier parte con control por voz.",
         categoria: "control_clima"
     },
@@ -63,7 +63,7 @@ const productos = [
         id: 8,
         nombre: "Ventilador con Control App",
         precio: 3800,
-        img: "/imagenes/ventilador_inteligente.png",
+        img: "../../public/img/ventilador.jpg",
         descripcion: "Controla la velocidad y la oscilación del ventilador con comandos de voz o desde tu móvil.",
         categoria: "control_clima"
     },
@@ -71,7 +71,7 @@ const productos = [
         id: 9,
         nombre: "Calefactor Programable",
         precio: 6300,
-        img: "/imagenes/calefactor_inteligente.png",
+        img: "../../public/img/calefactor.jpg",
         descripcion: "Regula el calor de tu habitación de manera eficiente desde una app.",
         categoria: "control_clima"
     },
@@ -81,7 +81,7 @@ const productos = [
         id: 10,
         nombre: "Robot Aspirador",
         precio: 8900,
-        img: "/imagenes/robot_aspirador.png",
+        img: "../../public/img/robot-aspirador.jpg",
         descripcion: "Limpieza automática de pisos, controlada por tu smartphone y compatible con asistentes de voz.",
         categoria: "electrodomesticos"
     },
@@ -89,7 +89,7 @@ const productos = [
         id: 11,
         nombre: "Horno con Conectividad WiFi",
         precio: 12000,
-        img: "/imagenes/horno_inteligente.png",
+        img: "../../public/img/horno.jpg",
         descripcion: "Cocina de manera eficiente con control remoto desde tu móvil.",
         categoria: "electrodomesticos"
     },
@@ -97,7 +97,7 @@ const productos = [
         id: 12,
         nombre: "Cafetera Automática",
         precio: 5400,
-        img: "/imagenes/cafetera_inteligente.png",
+        img: "../../public/img/cafetera.jpg",
         descripcion: "Programa y personaliza tu café desde la app o con comandos de voz.",
         categoria: "electrodomesticos"
     }
