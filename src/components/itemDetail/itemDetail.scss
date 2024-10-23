@@ -1,9 +1,15 @@
 $breakpoints: (
-    "md": 700px
+    "md": 700px,
+    "sm": 485px
 );
 
 @mixin md {
     @media (max-width: map-get($breakpoints, "md")){
+        @content;
+    }
+}
+@mixin sm {
+    @media (max-width: map-get($breakpoints, "sm")){
         @content;
     }
 }
@@ -24,8 +30,17 @@ $breakpoints: (
         border-radius: 10px;
         margin: 1.4rem;
         @include md{
-            max-width: 100%;
+            width: 80%;
+            margin: .8rem;
         }
+    }
+
+    @include md{
+        width: 70%;
+    }
+    
+    @include  sm {
+        height: 400px;
     }
 }
 
