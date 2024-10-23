@@ -6,9 +6,13 @@ import "./itemlist.scss"
 const ItemListContainer = ( {productos }) => {
   return (
     <div className="itemListContainer">
+
       <ItemList productos={productos}></ItemList>
 
-      <ItemDetailContainer></ItemDetailContainer>
+    {
+      //<ItemDetailContainer></ItemDetailContainer>
+    } 
+     
     </div>
   )
 }

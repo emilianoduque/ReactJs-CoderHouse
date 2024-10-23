@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 import ItemListContainerWithHoc from './components/itemlistcontainer/ItemListContainer'
 
+
 function App() {
   return (
     <>
@@ -16,10 +17,10 @@ function App() {
         <Route path='/' element={ <ItemListCotainerWithHoc></ItemListCotainerWithHoc>}/>
         <Route path='/categoria/:idCategoria' element={<ItemListContainerWithHoc></ItemListContainerWithHoc>}/>
         <Route path='detalle/:idProducto' element={<ItemDetailContainer></ItemDetailContainer>}/>
-
       </Routes>
 
       </BrowserRouter>
+
     </>
   )
 }

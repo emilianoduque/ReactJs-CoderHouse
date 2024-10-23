@@ -1,5 +1,5 @@
 import  useProductos from "../../customHooks/useProducts"
-import { Component, useState } from "react"
+import { useState } from "react"
 import "./hocFilter.scss"
 
 const hocFilterProductos = (Component) => {
