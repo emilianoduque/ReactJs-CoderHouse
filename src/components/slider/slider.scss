@@ -1,0 +1,39 @@
+@import "../../variables-sass/breakpoints-y-mixins.scss";
+
+#carouselExample{
+    width: 80vw;
+    align-items: center;
+    margin: 3rem auto;
+    border-radius: 20px;
+    overflow: hidden;
+    .carousel-item{
+        img{
+            height: 850px;
+            @include lg {
+                height: 550px;
+            }
+            @include md {
+                height: 350px;
+            }
+        }
+    }
+    button {
+        margin: 1.5rem;
+        background-color: rgba(27, 27, 27, 0.612);
+        height: 100px;
+        width: 100px;
+        align-self: center;
+        border-radius: 15px;
+        @include md {
+            background-color: rgba(255, 255, 255, 0);
+        }
+    }
+    @include lg {
+        width: 90vw;
+    }
+    @include sm {
+        width: 100vw;
+        border-radius: 0px;
+        margin-top: 1rem;
+    }
+}

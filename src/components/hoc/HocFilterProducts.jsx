@@ -1,46 +1,51 @@
 import  useProductos from "../../customHooks/useProducts"
 import { useState } from "react"
 import "./hocFilter.scss"
+import Slider from "../slider/Slider"
+import Footer from "../footer/footer"
 
-const hocFilterProductos = (Component) => {
+const hocFilterProductos = (Componente) => {
 
-    return function () {
-        const { productos } = useProductos();
-        const [query, setQuery] = useState("");
-        const [typeOrder, setTypeOrder] = useState("")
+    return function (){
 
-        const capturarInput = (event) => {
-            setQuery(event.target.value.toLowerCase())
-        };
+    const { productos } = useProductos();
+    const [query, setQuery] = useState("");
+    const [tipoOrden, setTipoOrden] = useState("");
 
-        const buscar = () => {
-            let filterProductos = productos.filter((producto) => {
-                return producto.nombre.toLowerCase().includes(query)
-            });
+    const changeInput = (event) => {
+        setQuery(event.target.value.toLowerCase());
+    };
 
-        if(typeOrder === "menor"){
-            filterProductos = filterProductos.sort((prevProducto, nuevProducto) => prevProducto.precio - nuevProducto.precio)
-        } else if (typeOrder === "mayor"){
-            filterProductos = filterProductos.sort((prevProducto, nuevProducto) => nuevProducto.precio - prevProducto.precio)
+    const buscar = () => {
+        let filterProductos = productos.filter((producto)=> {
+            return producto.nombre.toLowerCase().includes(query);
+        })
+        if(tipoOrden === "menor"){
+            filterProductos = filterProductos.sort((prevProducto, sigProducto) => prevProducto.precio - sigProducto.precio)
+        } else if(tipoOrden === "mayor"){
+            filterProductos = filterProductos.sort((prevProducto, sigProducto) => sigProducto.precio - prevProducto.precio)
         }
-
         return filterProductos;
-        }
-  
-
-    return ( 
-        <>
-            <div className="searchDiv">
-                <input type="text" placeholder="buscar..." onChange={capturarInput}/>
-                <div className="buttons">
-                    <button onClick={() => setTypeOrder("menor")}>Menor</button>
-                    <button onClick={() => setTypeOrder("mayor")}>Mayor</button>
-                </div>
-            </div>
-            <Component productos ={buscar()}/>
-        </>
-    )
     }
+
+   return (
+    <>
+    <Slider></Slider>
+    
+    <div className="buscador">
+        <input type="text" placeholder="Buscar..." onChange={changeInput}/>
+        <div className="botones">
+            <button onClick={ () => setTipoOrden("menor")}>Menor</button>
+            <button onClick={ () => setTipoOrden("mayor")}>Mayor</button>
+        </div>
+       
+    </div> 
+    <Componente productos={buscar()}/>
+    
+    <Footer></Footer>
+    </>
+   )
+  }
 }
 
 export default hocFilterProductos

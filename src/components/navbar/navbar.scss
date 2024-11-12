@@ -1,12 +1,10 @@
-$color1: #13131f;
-$color2: #0e4361;
-$color3: #0983b1;
-$color4: #07caff;
-$color5: #0ffff8;
-$color6: #9ff6f3;
+@import "../../variables-sass/variables.scss";
 
-nav {
-    padding: 0 !important;
+.navbar {
+  padding: 0 !important;
+  position: sticky;
+  top: 0;
+  z-index: 999;
   .container-fluid {
     background-color: $color3;
     #navbarNav {
@@ -46,5 +44,4 @@ nav {
 li:hover {
   background-color: $color2;
 }
-
 

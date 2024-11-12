@@ -1,30 +1,40 @@
 import { useState, useEffect } from "react";
-import { getProductos } from "../../data/data";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
-import Loading from "../loading/Loading";
+import { doc, getDoc } from "firebase/firestore";
+import db from "../../db/db.js";
+import Loading from "../loading/Loading.jsx";
 
 const ItemDetailContainer = () => {
-  const [producto, setProducto] = useState({})
-  const { idProducto } = useParams()
+  const [producto, setProducto] = useState({});
+  const [cargando, setCargando] = useState(true);
+  const {idProducto} = useParams();
 
-  const [loading, setLoading] = useState(true);
-
-  useEffect( ()=> {
-    setLoading(true)
-    getProductos()
-      .then((data) => {
-        const encontrarProducto = data.find((producto) => producto.id === parseInt(idProducto))
-        setProducto(encontrarProducto);
+  const getProductoPorId = () => {
+    const docRef = doc(db, "Productos", idProducto);
+    getDoc(docRef)
+      .then((dataBd) => {
+        const productoBd = { id: dataBd.id, ...dataBd.data()}
+        setProducto(productoBd);
       })
-      .finally(()=> setLoading(false))
-  },[idProducto])
+      .finally(() => {
+        setCargando(false)
+      })
+  }
+  useEffect(() => {
+    setCargando(true);
+    getProductoPorId();
+  }, [idProducto])
 
   return (
     <>
-      {loading ? (<Loading/>) : producto ? (<ItemDetail producto={producto} />) : (null)}
+    
+    {
+      cargando === true ? (<Loading></Loading>) :
+      <ItemDetail producto={producto}></ItemDetail>
+    }
+
     </>
-   
   )
 }
 

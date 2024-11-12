@@ -14,10 +14,7 @@ $breakpoints: (
     }
 }
 
-.cardDetail {
-    width: 45%;
-    margin: 3rem auto;
-    height: 500px;
+.item-detail {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -25,20 +22,37 @@ $breakpoints: (
     border-radius: 15px;
     padding: 2rem;
     background-color: rgba(167, 167, 167, 0.327);
-    img {
-        max-width: 300px;
-        border-radius: 10px;
-        margin: 1.4rem;
-        @include md{
-            width: 80%;
-            margin: .8rem;
+    .imagenes-detail-container{
+        display: flex;
+        align-items: flex-start; 
+        .imagenes-secundarias{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-right: 20px; 
+            img {
+                border-radius: 10px;
+                margin: 1.4rem;
+                cursor: pointer;
+                width: 300px; 
+                height: auto;
+                @include md{
+                    width: 80%;
+                    margin: .8rem;
+                }
+            }
+        }
+        .imagen-principal{
+            justify-content: center;
+            align-items: center;
+            img {
+                max-width: 600px;
+            }
         }
     }
-
     @include md{
         width: 70%;
     }
-    
     @include  sm {
         height: 400px;
     }

@@ -1,24 +1,44 @@
 import { useState, useEffect } from "react";
-import { getProductos } from "../data/data";
 import { useParams } from "react-router-dom";
+import {collection, getDocs, query, where} from "firebase/firestore"
+import db from "../db/db.js";
 
 const useProductos = () => {
     const [ productos, setProductos ] = useState([]);
     const {idCategoria} = useParams()
 
-    useEffect( () => {
-        getProductos()
-            .then((data) => {
-                if(idCategoria){
-                    const filterProductos =  data.filter((producto) => producto.categoria === idCategoria);
-                    setProductos(filterProductos);
-                } else {
-                    setProductos(data);
-                }
+    const getProductos = ()=> {
+        const productosRef = collection(db, "Productos");
+        getDocs(productosRef)
+            .then((dataBd) => {
+                const productosBd = dataBd.docs.map((productoBd) => {
+                    return {id: productoBd.id, ...productoBd.data()}
+                })
+                setProductos(productosBd)
             })
-            .catch((error) => console.error(error))
-    }, [idCategoria])
+    }
 
+    const getProductosCategoria = () => {
+        const productosRef = collection(db, "Productos");
+        const queryCategorias = query(productosRef, where("categoria", "==", idCategoria))
+
+        getDocs(queryCategorias)
+            .then((dataBd) => {
+                const productosBd = dataBd.docs.map((productoBd) => {
+                    return { id: productoBd.id, ...productoBd.data()}
+                })
+                setProductos(productosBd)
+            })
+    }
+
+    useEffect( () => {
+        if(idCategoria){
+            getProductosCategoria()
+        } else {
+            getProductos()
+        }
+    }, [idCategoria])
+    
     return { productos }
 }
 
