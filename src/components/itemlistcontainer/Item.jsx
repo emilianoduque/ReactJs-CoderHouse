@@ -1,7 +1,9 @@
 import {Link } from "react-router-dom"
 import "./item.scss"
+import { useNavigate } from "react-router-dom"
 
 const Item = ({producto}) => {
+
   return (
     <Link to={"/detalle/" + producto.id} className="card">
        <img src={producto.img[0]} alt="Img"/>

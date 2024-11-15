@@ -3,7 +3,8 @@ import ItemContador from "../itemContador/ItemContador";
 import { Link } from "react-router-dom";
 import "./itemDetail.scss"
 import {CarritoContext} from "../../context/CarritoContext"
-import "./itemDetail.scss"
+import "./itemDetail.scss";
+import AtrasBoton from "../atrasBoton/atrasBoton";
 
 const ItemDetail = ({producto}) => {
 
@@ -17,15 +18,17 @@ const ItemDetail = ({producto}) => {
   };
 
   const [currentImagen, setCurrentImagen] = useState(producto.img[0]);
-  const imagenes = producto.img.filter((imagen) => imagen !== currentImagen);
-
+  const imagenes = [...producto.img]; 
+  
   return (
-    <div className="item-detail">
+    <>
+      <AtrasBoton></AtrasBoton>
+      <div className="item-detail">
       <div className="imagenes-detail-container">
         <div className="imagenes-secundarias">
           {
             imagenes.map((imagen) => (
-              <img src={imagen} key={imagen} onClick={ () => setCurrentImagen(imagen)}/>
+              <img src={imagen} key={imagen} onMouseMove={ () => setCurrentImagen(imagen)}/>
             ))
           }
         </div>
@@ -34,16 +37,17 @@ const ItemDetail = ({producto}) => {
           <img src={currentImagen} alt="Imagen Principal"/>
         </div>
 
-        <div>
+        <div className="informacion">
             <h2>{producto.nombre}</h2>
-            <p>{producto.descripcion}</p>
+            <p className="descripcion">{producto.descripcion}</p>
             <p>Precio: ${producto.precio}</p>
             {
-              showItemContador === true ? (<ItemContador stock={producto.stock} addProducto={addProducto}></ItemContador>) : (<Link to="/carrito">Terminar mi compra</Link>)
+              showItemContador === true ? (<ItemContador stock={producto.stock} addProducto={addProducto}></ItemContador>) : (<Link to="/carrito" className="terminar-compra">Terminar mi compra</Link>)
             }
         </div>
       </div>
     </div>
+    </>    
   )
 }
 export default ItemDetail;

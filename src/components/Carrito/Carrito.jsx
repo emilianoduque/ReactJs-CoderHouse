@@ -1,20 +1,22 @@
-import { useContext } from "react"
-import { CarritoContext } from "../../context/CarritoContext"
-import { Link } from "react-router-dom"
+import { useContext } from "react";
+import { CarritoContext } from "../../context/CarritoContext";
+import { Link } from "react-router-dom";
+import AtrasBoton from "../atrasBoton/atrasBoton";
+import "./carrito.scss";
 
 const Carrito = () => {
     const { carrito, precioTotal, borrarProductoPorId, borrarCarrito} = useContext(CarritoContext);
-
     if(carrito.length === 0){
         return (
-            <div>
+            <div className="sin-productos">
                 <h2>No hay productos cargados en el carrito</h2>
-                <Link to="/">Volver al inicio</Link>
+                <Link to="/" className="volver">Volver al inicio</Link>
             </div>
         )
     }
   return (
     <div>
+        <AtrasBoton></AtrasBoton>
         <h2>Productos en el carrito</h2>
         {
             carrito.map((productoCarrito) => (

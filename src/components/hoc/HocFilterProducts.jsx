@@ -2,13 +2,12 @@ import  useProductos from "../../customHooks/useProducts"
 import { useState } from "react"
 import "./hocFilter.scss"
 import Slider from "../slider/Slider"
-import Footer from "../footer/footer"
 
 const hocFilterProductos = (Componente) => {
 
     return function (){
 
-    const { productos } = useProductos();
+    const { productos, cargando } = useProductos();
     const [query, setQuery] = useState("");
     const [tipoOrden, setTipoOrden] = useState("");
 
@@ -40,9 +39,9 @@ const hocFilterProductos = (Componente) => {
         </div>
        
     </div> 
-    <Componente productos={buscar()}/>
+    <Componente productos={buscar()} cargando={cargando}/>
     
-    <Footer></Footer>
+
     </>
    )
   }

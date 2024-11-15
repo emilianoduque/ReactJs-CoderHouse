@@ -1,3 +1,4 @@
+@import "../../variables-sass/breakpoints-y-mixins.scss";
 
 .card {
     display: flex;
@@ -14,11 +15,17 @@
         transform: scale(1.02);
         box-shadow: 6px 6px 5px -3px rgba(0,0,0,0.69);
     }
+    @include sm {
+        padding: .5rem;
+    }
     img {
         max-width: 200px;
         max-height: 200px;
         text-align: center;
         align-self: center;
+        @include sm {
+            width: 170px;
+        }
     }
     .subCard{
         h2{
@@ -27,9 +34,14 @@
             overflow: hidden;
             text-overflow: ellipsis;
             max-width: 100%;
+            @include sm {
+                font-size: 1.2rem;
+            }
         }
         p {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
+            @include sm {
+            }
         }
     }
    

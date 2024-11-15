@@ -3,7 +3,8 @@ import "./footer.scss"
 const Footer = () => {
   return (
     <footer>
-        <p>242142</p>
+        <h3>Smartify-Home</h3>
+        <p>Tel: 24214223</p>
     </footer>
   )
 }

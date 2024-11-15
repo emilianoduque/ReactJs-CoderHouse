@@ -15,7 +15,7 @@ const CheckOut = () => {
         email: ""
     })
     
-    const { carrito, preciototal, borrarCarrito} = useContext(CarritoContext);
+    const { carrito, precioTotal, borrarCarrito} = useContext(CarritoContext);
 
     const handleChangeInput = (event) => {
         setDataForm({...dataForm, [event.target.name]: event.target.value});
@@ -28,7 +28,7 @@ const CheckOut = () => {
             comprador: {...dataForm},
             productos: {...carrito},
             fecha: Timestamp.fromDate(new Date()),
-            total: preciototal()
+            total: precioTotal()
         };
 
         validarForm(dataForm)

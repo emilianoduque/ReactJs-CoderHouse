@@ -5,9 +5,11 @@ import db from "../db/db.js";
 
 const useProductos = () => {
     const [ productos, setProductos ] = useState([]);
-    const {idCategoria} = useParams()
+    const {idCategoria} = useParams();
+    const [ cargando, setCargando] = useState(true);
 
     const getProductos = ()=> {
+        setCargando(true);
         const productosRef = collection(db, "Productos");
         getDocs(productosRef)
             .then((dataBd) => {
@@ -15,19 +17,21 @@ const useProductos = () => {
                     return {id: productoBd.id, ...productoBd.data()}
                 })
                 setProductos(productosBd)
+                setCargando(false);
             })
     }
 
     const getProductosCategoria = () => {
         const productosRef = collection(db, "Productos");
         const queryCategorias = query(productosRef, where("categoria", "==", idCategoria))
-
+        setCargando(true);
         getDocs(queryCategorias)
             .then((dataBd) => {
                 const productosBd = dataBd.docs.map((productoBd) => {
                     return { id: productoBd.id, ...productoBd.data()}
                 })
                 setProductos(productosBd)
+                setCargando(false);
             })
     }
 
@@ -39,7 +43,7 @@ const useProductos = () => {
         }
     }, [idCategoria])
     
-    return { productos }
+    return { productos, cargando}
 }
 
 export default useProductos;

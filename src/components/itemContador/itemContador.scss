@@ -1,11 +1,23 @@
+@import "../../variables-sass/variables.scss";
+
 .botonera-contador{
     display: flex;
     align-items: center;
+    .contador-button{
+        width: 55px;
+    }
     button{
-        padding: .8rem;
+        padding: .5rem;
         border: none;
         border-radius: 5px;
         font-size: 1.3rem;
+        height: 50px;
+        background-color: $color1;
+        color: $color3;
+        &:hover{
+            background-color: $color3;
+            color: $color1;
+        }
     }
     .agregar {
         margin-left: 1rem;

@@ -1,9 +1,10 @@
+@import "../../variables-sass/variables.scss";
+
 @media (max-width: 707px) {
     .icono{
        width: 30px;
     }
    }
-
    .carrito-widget{
     display: flex;
     align-items: center;
@@ -11,15 +12,19 @@
     margin-right: 1rem;
     margin-top: 15px;
     text-decoration: none;
+    .carrito-vacio{
+        color: $color2;
+    }
+    .en-uso{
+        color: $color3;
+    }
     .icono{
         font-size: 2rem;
-        color: rgb(45, 45, 45);
     }
     p{
-        color: black;
+        color: $color2;
         font-size: 1.4rem;
         margin-left: 5px;
         text-decoration: none;
-        
     }
    }

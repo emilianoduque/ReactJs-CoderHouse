@@ -1,7 +1,9 @@
+@import "../../variables-sass/breakpoints-y-mixins.scss";
+
 .board-items{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: auto;
+    margin: auto auto 8rem auto;
     width: 80vw;
 }

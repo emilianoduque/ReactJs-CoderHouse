@@ -1,8 +1,8 @@
-# React + Vite
+# Smartify-Home (Proyecto React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img src="https://pbs.twimg.com/profile_images/1785867863191932928/EpOqfO6d_400x400.png">
 
-Currently, two official plugins are available:
+## Descripción: 
+### Modelo de página web (e-commerce) de productos inteligentes para la casa
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Dependencias:

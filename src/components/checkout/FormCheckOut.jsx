@@ -9,6 +9,8 @@ const FormCheckOut = ({dataForm, handleChangeInput, handleSubmitForm}) => {
 
         <label>Email</label>
         <input type="email" name="email" value={dataForm.email} onChange={handleChangeInput}/>
+
+        <button type="submit">Comprar</button>
     </form>
   )
 }

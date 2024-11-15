@@ -18,13 +18,13 @@ const ItemContador = ({stock, addProducto}) => {
 
   return (
     <div className="botonera-contador">
-        <button onClick={handleClickRest}>-</button>
+        <button onClick={handleClickRest} className="contador-button">-</button>
         <p>
             {
                 contador
             }
         </p>
-        <button onClick={handleClickAdd}>+</button>
+        <button onClick={handleClickAdd} className="contador-button">+</button>
         <button onClick={ () => addProducto(contador)} className="agregar">Agregar</button>
     </div>
   )

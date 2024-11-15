@@ -8,12 +8,12 @@ import Carrito from './components/Carrito/Carrito'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import CheckOut from './components/checkout/CheckOut'
+import Footer from './components/footer/Footer'
 
 function App() {
   return (
     <>
       <BrowserRouter>
-      
       <CarritoProvider>
       <NavBar></NavBar>
       <ToastContainer theme='dark'/>
@@ -24,9 +24,9 @@ function App() {
         <Route path='/carrito' element={<Carrito></Carrito>}></Route>
         <Route path='/checkout' element={<CheckOut></CheckOut>}></Route>
       </Routes>
-
       </CarritoProvider>
       </BrowserRouter>
+      <Footer></Footer>
 
     </>
   )
