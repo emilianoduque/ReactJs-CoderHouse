@@ -1,9 +1,12 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 const CarritoContext = createContext();
 
 const CarritoProvider = ({children}) => {
-    const [carrito, setCarrito] = useState([]);
+    const [carrito, setCarrito] = useState(() => {
+        const carritoGuardado = localStorage.getItem("productosCarrito");
+        return carritoGuardado ? JSON.parse(carritoGuardado) : [];
+    });
 
     const addProductoCarrito = (nuevoProducto) => {
         const condicion = estaEnCarrito(nuevoProducto.id)
@@ -12,12 +15,16 @@ const CarritoProvider = ({children}) => {
             const tempCarrito = [...carrito]
             const findIndex = tempCarrito.findIndex((productoCarrito) => productoCarrito.id === nuevoProducto.id)
             tempCarrito[findIndex].cantidad = tempCarrito[findIndex].cantidad + nuevoProducto.cantidad
-
             setCarrito(tempCarrito);
         } else {
             setCarrito([...carrito, nuevoProducto])
         }
     };
+
+   //usando useEffect para guardar en el localStorage al cambiar el carrito
+    useEffect(() => {
+        localStorage.setItem('productosCarrito', JSON.stringify(carrito));
+    }, [carrito]);
 
     const estaEnCarrito = (idProducto) => {
         return carrito.some((productoCarrito) => productoCarrito.id === idProducto);
