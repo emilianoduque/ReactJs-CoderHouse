@@ -29,9 +29,11 @@
                 width: 140px; 
                 height: 140px;
                 box-shadow: 6px 6px 5px -3px rgba(0, 0, 0, 0.295);
+                border: 1px solid $color3;
                 @include md{
                     width: 150px;
                     margin: .8rem;
+                    height: 150px;
                 }
                 @media (max-width: 553px){
                     width: 120px;
@@ -39,13 +41,18 @@
                 @include sm {
                     width: 100px;
                     margin: 1rem auto;
+                    height: 100px;
                 }
                 @media (max-width: 420px){
                     width: 80px;
                 }
                 @media (max-width: 330px){
-                    width: 70px;
-                    height: 60px;
+                    width: 55px;
+                    height: 55px;
+                }
+                @media (max-width: 230px){
+                    width: 45px;
+                    height: 45px;
                 }
          
             }
@@ -54,7 +61,9 @@
                 margin: auto;
                 gap: 5px;
             }
-            @include sm {
+            @media (max-width: 280px){
+                justify-content: center;
+                gap: 5px;
             }
         }
         .imagen-principal{
@@ -73,6 +82,11 @@
                     height: 200px;
                     width: 200px;
                 }
+                @media (max-width: 230px){
+                    width: 150px;
+                    height: 150px;
+                }
+         
             }
         }
         .informacion{
@@ -83,6 +97,11 @@
             }
             @include sm {
                 margin: auto;
+            }
+            h2 {
+                @media (max-width: 332px){
+                    text-align: center;
+                }
             }
             .terminar-compra{
                 text-decoration: none;
@@ -128,6 +147,7 @@
     }
     @media (max-width: 332px) {
         margin: 0 auto 30vh auto;
+        display: inline;
     }
 }
 

@@ -12,6 +12,11 @@
         margin: 10px;
         height: 50px;
         width: 20vw;
+        background-color: $color1;
+        color: $color3;
+        &::placeholder{
+            color: $color3;
+        }
         &:focus{
             outline: none;
         }
