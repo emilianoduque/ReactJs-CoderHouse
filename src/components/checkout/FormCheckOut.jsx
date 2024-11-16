@@ -1,3 +1,5 @@
+import "./formCheckOut.scss";
+
 const FormCheckOut = ({dataForm, handleChangeInput, handleSubmitForm}) => {
   return (
     <form onSubmit={handleSubmitForm}>

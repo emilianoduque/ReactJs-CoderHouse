@@ -28,6 +28,7 @@
                 cursor: pointer;
                 width: 140px; 
                 height: 140px;
+                box-shadow: 6px 6px 5px -3px rgba(0, 0, 0, 0.295);
                 @include md{
                     width: 150px;
                     margin: .8rem;
@@ -35,14 +36,25 @@
                 @media (max-width: 553px){
                     width: 120px;
                 }
+                @include sm {
+                    width: 100px;
+                    margin: 1rem auto;
+                }
+                @media (max-width: 420px){
+                    width: 80px;
+                }
+                @media (max-width: 330px){
+                    width: 70px;
+                    height: 60px;
+                }
          
             }
             @include md {
                 flex-direction: row;
                 margin: auto;
+                gap: 5px;
             }
             @include sm {
-               
             }
         }
         .imagen-principal{
@@ -57,6 +69,10 @@
                     width: 80vw;
                     height: 45vh;
                 }
+                @include sm {
+                    height: 200px;
+                    width: 200px;
+                }
             }
         }
         .informacion{
@@ -64,6 +80,9 @@
             align-self: center;
             @include md{
                 margin-top: 1rem;
+            }
+            @include sm {
+                margin: auto;
             }
             .terminar-compra{
                 text-decoration: none;
@@ -75,23 +94,40 @@
                 padding: .6rem;
                 transition: .3s ease;
                 &:hover{
-                    background-color: $color3;
-                    color: $color1;
+                    background-color: $color6;
+                    color: white;
+                }
+                @include sm {
+                    margin: auto;
                 }
             }
             .descripcion{
                 width: 300px;
+                @media (max-width:332px) {
+                    width: 180px;
+                    text-align: center;
+                    margin: auto;
+                }
+            }
+            .precio{
+                @media (max-width:332px) {
+                    text-align: center;
+                    margin: 1rem auto;
+                }
             }
         }
     }
     @include lg{
         width: 100%;
         margin: 0 auto 50vh auto;
-        display: inline;
+        display: inline-block;
         background-color: transparent;
     }
     @include  sm {
         height: 100%;
+    }
+    @media (max-width: 332px) {
+        margin: 0 auto 30vh auto;
     }
 }
 

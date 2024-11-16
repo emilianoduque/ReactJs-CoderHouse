@@ -1,7 +1,7 @@
 import NavBar from './components/navbar/NavBar'
 import ItemDetailContainer from './components/itemDetail/ItemDetailContainer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import './App.css'
+import './App.scss'
 import ItemListContainerWithHoc from './components/itemlistcontainer/ItemListContainer'
 import { CarritoProvider } from './context/CarritoContext'
 import Carrito from './components/Carrito/Carrito'

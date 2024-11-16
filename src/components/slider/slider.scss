@@ -2,15 +2,16 @@
 
 #carouselExample{
     width: 80vw;
+    height: 40vh;
     align-items: center;
-    margin: 0 auto 3rem auto;
+    margin: 1rem auto 3rem auto;
     border-radius: 20px;
     overflow: hidden;
     .carousel-item{
         img{
             height: 850px;
             @include lg {
-                height: 550px;
+                height: 300px;
             }
             @include md {
                 height: 350px;
@@ -27,13 +28,20 @@
         @include md {
             background-color: rgba(255, 255, 255, 0);
         }
+        @include sm {
+            margin: 0;
+        }
     }
     @include lg {
         width: 90vw;
+        height: 300px;
     }
     @include sm {
         width: 100vw;
+        height: 200px;
         border-radius: 0px;
-        margin-top: 1rem;
+    }
+    @media (max-width: 314px) {
+        height: 150px;
     }
 }

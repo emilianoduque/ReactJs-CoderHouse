@@ -40,9 +40,9 @@ const ItemDetail = ({producto}) => {
         <div className="informacion">
             <h2>{producto.nombre}</h2>
             <p className="descripcion">{producto.descripcion}</p>
-            <p>Precio: ${producto.precio}</p>
+            <p className="precio">Precio: ${producto.precio}</p>
             {
-              showItemContador === true ? (<ItemContador stock={producto.stock} addProducto={addProducto}></ItemContador>) : (<Link to="/carrito" className="terminar-compra">Terminar mi compra</Link>)
+              showItemContador === true ? (<ItemContador stock={producto.stock} addProducto={addProducto}></ItemContador>) : (<Link to="/carrito" className="terminar-compra">Terminar compra</Link>)
             }
         </div>
       </div>

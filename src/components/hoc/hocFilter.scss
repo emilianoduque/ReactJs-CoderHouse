@@ -12,6 +12,9 @@
         margin: 10px;
         height: 50px;
         width: 20vw;
+        &:focus{
+            outline: none;
+        }
         @include sm{
             width: 80%;
             margin: 1.2rem auto;
@@ -25,9 +28,11 @@
             margin: .5rem;
             border-radius: 8px;
             transition: .3s ease;
+            background-color: $color1;
+            color: $color3;
             &:hover {
-                background-color: $color1;
-                color: $color4;
+                background-color: $color3;
+            color: $color1;
             }
         }
         @include sm{

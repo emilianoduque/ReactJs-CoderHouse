@@ -18,13 +18,15 @@ const ItemContador = ({stock, addProducto}) => {
 
   return (
     <div className="botonera-contador">
-        <button onClick={handleClickRest} className="contador-button">-</button>
-        <p>
-            {
-                contador
-            }
-        </p>
-        <button onClick={handleClickAdd} className="contador-button">+</button>
+        <div className="botones-contador">
+            <button onClick={handleClickRest} className="contador-button">-</button>
+            <p>
+                {
+                    contador
+                }
+            </p>
+            <button onClick={handleClickAdd} className="contador-button">+</button>
+        </div>
         <button onClick={ () => addProducto(contador)} className="agregar">Agregar</button>
     </div>
   )
