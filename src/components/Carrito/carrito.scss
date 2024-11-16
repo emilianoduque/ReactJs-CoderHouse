@@ -25,6 +25,10 @@
             padding: 1rem;
             background-color: $color1;
             border-radius: 10px;
+           
+        }
+        @media (max-width:208px){
+            width: 150px;
         }
         img{
             width: 100px;
@@ -35,6 +39,7 @@
             @media (max-width:550px) {
                 color: $color4;
                 text-align: center;
+                margin: 0;
             }
         }
         .nombre{
@@ -137,5 +142,12 @@
         &:hover {
             transform: scale(1.03);
         }
+    }
+    @media (max-width: 552px){
+        width: 300px;
+    }
+    @media (max-width: 316px){
+        width: 200px;
+        
     }
 }
