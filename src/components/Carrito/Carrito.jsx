@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CarritoContext } from "../../context/CarritoContext";
 import { Link } from "react-router-dom";
-import AtrasBoton from "../atrasBoton/atrasBoton";
+import AtrasBoton from "../atrasBoton/AtrasBoton";
 import "./carrito.scss";
 
 const Carrito = () => {
