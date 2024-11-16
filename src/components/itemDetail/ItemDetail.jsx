@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./itemDetail.scss"
 import {CarritoContext} from "../../context/CarritoContext"
 import "./itemDetail.scss";
-import AtrasBoton from "../atrasBoton/atrasBoton";
+import AtrasBoton from "../atrasBoton/AtrasBoton";
 
 const ItemDetail = ({producto}) => {
 
