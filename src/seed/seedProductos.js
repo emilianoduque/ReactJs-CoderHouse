@@ -6,7 +6,8 @@ const productos = [
         id: 1,
         nombre: "Bombilla LED WiFi",
         precio: 1500,
-        img: ["../../public/img-productos/bombilla-led-1.png", "../../public/img-productos/bombilla-led-2.png", "../../public/img-productos/bombilla-led-3.png"],
+        //probando cambiar linkeo para que se vea en el versel las imagenes
+        img: ["/img-productos/bombilla-led-1.png", "/img-productos/bombilla-led-2.png", "/img-productos/bombilla-led-3.png"],
         descripcion: "Controla la iluminación de tu hogar desde tu smartphone. Compatible con Alexa y Google Home.",
         categoria: "iluminacion",
         stock: 25
