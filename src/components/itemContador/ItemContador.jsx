@@ -1,5 +1,5 @@
 import { useState } from "react"
-import "./ItemContador.scss"
+import "./itemContador.scss"
 
 const ItemContador = ({stock, addProducto}) => {
     const [contador, setContador] = useState(1);
