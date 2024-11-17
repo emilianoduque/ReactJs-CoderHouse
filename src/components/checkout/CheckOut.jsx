@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import FormCheckOut from "./FormCheckOut";
 import validarForm from "../../utils/ValidarForm";
 import { toast } from "react-toastify";
+import "./checkout.scss";
 
 const CheckOut = () => {
     const [idOrden, setIdOrden] = useState(null);
@@ -66,11 +67,11 @@ const CheckOut = () => {
     <div>
     {
         idOrden === null ? (<FormCheckOut dataForm={dataForm} handleChangeInput={handleChangeInput} handleSubmitForm={handleSubmitForm}></FormCheckOut>) : (
-            <div>
+            <div className="checkout">
                 <h2>Gracias por tu compra!</h2>
                 <p>Tu orden se subió correctamente 😃</p>
                 <p>Guarda el numero de seguimiento: {idOrden}</p>
-                <Link to="/">Volver al inicio</Link>
+                <Link to="/" className="volver">Volver al inicio</Link>
             </div>
         )
     }

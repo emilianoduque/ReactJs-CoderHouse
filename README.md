@@ -6,3 +6,5 @@
 ### Modelo de página web (e-commerce) de productos inteligentes para la casa
 
 ## Dependencias:
+ `FireBase` `React` `React-Dom` `React-icons`
+`React-Router-Dom` `React-Toastify` `Yup` `Sass` `React-Spinners` 
